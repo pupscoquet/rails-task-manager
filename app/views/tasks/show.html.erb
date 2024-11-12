@@ -1,0 +1,10 @@
+<div class="show-container">
+  <h3><%= @task.title.capitalize %></h3>
+  <p><%= @task.details %></p>
+  <%= link_to "⏪", tasks_path %>
+  <%= link_to "🖌", edit_task_path %>
+  <%= link_to "🗑",
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>

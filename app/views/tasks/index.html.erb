@@ -1,0 +1,17 @@
+<h1>To-do today</h1>
+<ul>
+  <% @tasks.each do |task|  %>
+    <div class="container task-container">
+      <div class="box"></div>
+      <li>
+        <br>
+        <%= link_to task.title.capitalize, task_path(task) %>
+          <%= link_to "🗑",
+    task_path(task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+      </li>
+    </div>
+  <% end %>
+  <p id="new-task"><%= link_to "Create new task", new_task_path %></p>
+</ul>

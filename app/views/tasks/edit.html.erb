@@ -1,0 +1,11 @@
+<div class="show-container">
+  <h2>Edit list item</h2>
+  <%= form_with model: @task do |t| %>
+    <%= t.label :title %><br>
+    <%= t.text_field :title %><br>
+    <div class="space"></div>
+    <%= t.label :details %><br>
+    <%= t.text_field :details %>
+    <%= t.submit %>
+  <% end %>
+</div>
